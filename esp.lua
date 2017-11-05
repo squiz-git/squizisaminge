@@ -16,10 +16,10 @@ hook.Add( "HUDPaint", "SquizSP", function()
             local Dist = math.ceil(v:GetPos():Distance(LocalPlayer():GetPos()))
             -- Name
             draw.DrawText( v:Name(), "DermaLarge", Position.x, Position.y, Color( 255, 255, 255, 255 ), 1 )
-            draw.DrawText( Dist, "DermaDefault", Position.x, Position.y+50, Color( 255, 255, 255, 255 ), 1 )
+            draw.DrawText( Dist, "DermaDefault", Position.x, Position.y+50, Color( (Dist/20)*2, (Dist/20)*2, (Dist/20)*2, 255 ), 1 )
+            print((Dist/20)*2)
         end
     end
-    -- Player Wallhack and draw
     for k,v in pairs ( ents.FindByClass("player*") ) do
         v:SetMaterial("models/debug/debugwhite",true)
         v:SetColor(Color(255,0,0,150))
