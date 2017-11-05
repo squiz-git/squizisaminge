@@ -1,13 +1,13 @@
 -- Made by Squiz
 -- "pk is not bhop" -iced coffee
 
-hook.Add( "HUDPaint", "HUDPaint_DrawABox", function()
+hook.Add( "HUDPaint", "HUDVelocityBar", function()
     local Vel = math.Round(LocalPlayer():GetVelocity():Length()/2)
     surface.SetDrawColor( 0, 0, 0, 150 )
     surface.DrawRect( ScrW()/120, ScrH()/90, math.Clamp((Vel/2)+25,0,ScrW()-50), 32 )
 end)
 
-hook.Add("HUDPaint","HUDDraw_VelText",function()
+hook.Add("HUDPaint","HUDVelocityNumber",function()
     local Vel = math.Round(LocalPlayer():GetVelocity():Length())
     draw.Text({
     text=Vel,
