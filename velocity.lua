@@ -4,7 +4,7 @@
 hook.Add( "HUDPaint", "HUDPaint_DrawABox", function()
     local Vel = math.Round(LocalPlayer():GetVelocity():Length()/2)
     surface.SetDrawColor( 0, 0, 0, 150 )
-    surface.DrawRect( ScrW()/120, ScrH()/90, math.Clamp((Vel/2)+25,0,1700), 32 )
+    surface.DrawRect( ScrW()/120, ScrH()/90, math.Clamp((Vel/2)+25,0,ScrW()-50), 32 )
 end)
 
 hook.Add("HUDPaint","HUDDraw_VelText",function()
